@@ -1,0 +1,35 @@
+{
+  "name": "angularjs-templates-brunch",
+  "version": "0.0.1",
+  "description": "Places templates in an AngularJS module via a Brunch.io plugin",
+  "author": {
+    "name": "Doug Moscrop",
+    "email": "doug.moscrop@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Kenneth Kan",
+      "email": "kenhkan@gmail.com"
+    },
+	{
+	  "name": "Jonathan Rico, Daniel López"
+	}
+  ],
+  "homepage": "https://github.com/dmoscrop/angularjs-templates-brunch",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:dmoscrop/angularjs-templates-brunch.git"
+  },
+  "main": "lib/index",
+  "engines": {
+    "node": ">=0.8"
+  },
+  "scripts": {
+	"prepublish": "node_modules/.bin/coffee -c --bare --output lib/ src/"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "coffee-script": "~1.7"
+  }
+}
