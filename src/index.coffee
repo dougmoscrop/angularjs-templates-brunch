@@ -7,7 +7,7 @@ module.exports = class AngularTemplatesCompiler
     @module = config.plugins?.angular_templates?.module or 'templates'
   
   parseHtml: (str) ->
-    return str.replace(/'/g, "\\'").replace(/\n/g, '')
+    return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
   
   compile: (data, path, callback) ->
     html = @parseHtml(data)
