@@ -8,7 +8,7 @@ information.
 
 ## Installation
 
-`npm install --save angular-templates-brunch`
+`npm install --save angularjs-templates-brunch`
 
 
 ## Usage
