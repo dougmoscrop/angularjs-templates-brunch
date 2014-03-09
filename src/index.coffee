@@ -5,14 +5,14 @@ module.exports = class AngularTemplatesCompiler
 
   constructor: (config) ->
     @module = config.plugins?.angular_templates?.module or 'templates'
-  
+
   parseHtml: (str) ->
     return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
-  
+
   compile: (data, path, callback) ->
     html = @parseHtml(data)
     url = path.replace(/\\/g, "/")
-    
+
     callback null, """
 (function() {
     var module;
@@ -25,8 +25,8 @@ module.exports = class AngularTemplatesCompiler
         module = angular.module('#{@module}', []);
     }
 
-    module.run(function($templateCache) {
+    module.run(["$templateCache", function($templateCache) {
         $templateCache.put('#{url}', '#{html}');
-    });
+    }]);
 })();
 """
