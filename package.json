@@ -1,6 +1,6 @@
 {
   "name": "angularjs-templates-brunch",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Places templates in an AngularJS module via a Brunch.io plugin",
   "author": {
     "name": "Doug Moscrop",
@@ -12,7 +12,14 @@
       "email": "kenhkan@gmail.com"
     },
 	{
-	  "name": "Jonathan Rico, Daniel López"
+	  "name": "Jonathan Rico"
+	},
+	{
+	  "name": "Daniel López"
+	},
+	{
+	  "name": "Egor Khmelev",
+	  "email": "hmelyoff@gmail.com"
 	}
   ],
   "homepage": "https://github.com/dmoscrop/angularjs-templates-brunch",
