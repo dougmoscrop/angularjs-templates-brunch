@@ -67,6 +67,8 @@ Specify the base path of the templates folder which will not be used while inclu
 
 Default: ``
 
+Example: if your template is in app/scripts/somedir/myTemplate. html, you can reference the template as 'somedir/myTemplate. html' by setting the base to 'app/scripts'.
+
 ```coffee
 plugins:
   angular_templates:
