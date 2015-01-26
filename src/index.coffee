@@ -5,13 +5,14 @@ module.exports = class AngularTemplatesCompiler
 
   constructor: (config) ->
     @module = config.plugins?.angular_templates?.module or 'templates'
+    @base = config.plugins?.angular_templates?.base or ''
 
   parseHtml: (str) ->
     return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
 
   compile: (data, path, callback) ->
     html = @parseHtml(data)
-    url = path.replace(/\\/g, "/")
+    url = path.replace(/\\/g, "/").replace(@base,"")
 
     callback null, """
 (function() {
