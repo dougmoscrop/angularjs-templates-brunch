@@ -60,9 +60,23 @@ plugins:
     module: 'MyModule'
 ```
 
+### base
+
+Specify the base path of the templates folder which will not be used while including them.
+
+
+Default: ``
+
+Example: if your template is in app/scripts/somedir/myTemplate. html, you can reference the template as 'somedir/myTemplate. html' by setting the base to 'app/scripts'.
+
+```coffee
+plugins:
+  angular_templates:
+    base: 'app/scripts/'
+```
+
 ## Credit
 
 I looked at and used parts from these projects:
 
-- https://github.com/nathanredblur/html-angularjs-brunch
-- https://github.com/kenhkan/angular-templates-brunch/
+- https://github.com/aberman/html2js-brunch
