@@ -13,7 +13,7 @@ module.exports = class AngularTemplatesCompiler
     return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
 
   compile: (data, path, callback) ->
-    html = @parseHtml(data)
+    html = escape(data)
     url = path.replace(/\\/g, "/").replace(@base,"")
 
     callback null, """
