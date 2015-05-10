@@ -11,16 +11,16 @@
       "name": "Kenneth Kan",
       "email": "kenhkan@gmail.com"
     },
-	{
-	  "name": "Jonathan Rico"
-	},
-	{
-	  "name": "Daniel López"
-	},
-	{
-	  "name": "Egor Khmelev",
-	  "email": "hmelyoff@gmail.com"
-	}
+    {
+      "name": "Jonathan Rico"
+    },
+    {
+      "name": "Daniel López"
+    },
+    {
+      "name": "Egor Khmelev",
+      "email": "hmelyoff@gmail.com"
+    }
   ],
   "homepage": "https://github.com/dmoscrop/angularjs-templates-brunch",
   "repository": {
@@ -32,9 +32,10 @@
     "node": ">=0.8"
   },
   "scripts": {
-	"prepublish": "./node_modules/.bin/coffee -c --bare --output lib/ src/"
+    "prepublish": "./node_modules/.bin/coffee -c --bare --output lib/ src/"
   },
   "dependencies": {
+    "js-string-escape": "^1.0.0"
   },
   "devDependencies": {
     "coffee-script": "~1.7"

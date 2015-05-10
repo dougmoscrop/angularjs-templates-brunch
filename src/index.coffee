@@ -1,3 +1,5 @@
+escape = require('js-string-escape');
+
 module.exports = class AngularTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
@@ -10,7 +12,8 @@ module.exports = class AngularTemplatesCompiler
     return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
 
   compile: (data, path, callback) ->
-    html = @parseHtml(data)
+#    html = @parseHtml(data)
+    html = escape(data)
     url = path.replace(/\\/g, "/")
 
     callback null, """
