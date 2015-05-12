@@ -5,16 +5,20 @@ module.exports = class AngularTemplatesCompiler
   type: 'template'
   extension: 'html'
 
+  _default_path_transform: (path) ->
+    # Default path transformation is a no-op
+    path
+
   constructor: (config) ->
     @module = config.plugins?.angular_templates?.module or 'templates'
-    @base = config.plugins?.angular_templates?.base or ''
+    @path_transform = config.plugins?.angular_templates?.path_transform or @_default_path_transform
 
   parseHtml: (str) ->
     return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
 
   compile: (data, path, callback) ->
     html = escape(data)
-    url = path.replace(/\\/g, "/").replace(@base,"")
+    url = @path_transform(path.replace(/\\/g, "/"))
 
     callback null, """
 (function() {
