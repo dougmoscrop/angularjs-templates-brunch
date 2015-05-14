@@ -63,7 +63,7 @@ plugins:
 ### path_transform 
 
 Specify a transform function for the template path. This callback function will
-be invoked with the relative path to each template file (e.g.
+be invoked with the brunch path to each template file (e.g.
 'app/home/home.html') and must return a new path for that template (e.g.
 '/partials/home/home.html'). This new path will be used when inserting into the
 template cache. This allows the template files to be served from an arbitrary
