@@ -1,17 +1,21 @@
+escape = require('js-string-escape');
+
 module.exports = class AngularTemplatesCompiler
   brunchPlugin: yes
   type: 'template'
   extension: 'html'
 
+  _default_path_transform: (path) ->
+    # Default path transformation is a no-op
+    path
+
   constructor: (config) ->
     @module = config.plugins?.angular_templates?.module or 'templates'
-
-  parseHtml: (str) ->
-    return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
+    @path_transform = config.plugins?.angular_templates?.path_transform or @_default_path_transform
 
   compile: (data, path, callback) ->
-    html = @parseHtml(data)
-    url = path.replace(/\\/g, "/")
+    html = escape(data)
+    url = @path_transform(path.replace(/\\/g, "/"))
 
     callback null, """
 (function() {
