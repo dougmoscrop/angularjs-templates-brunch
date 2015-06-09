@@ -13,9 +13,6 @@ module.exports = class AngularTemplatesCompiler
     @module = config.plugins?.angular_templates?.module or 'templates'
     @path_transform = config.plugins?.angular_templates?.path_transform or @_default_path_transform
 
-  parseHtml: (str) ->
-    return str.replace(/'/g, "\\'").replace(/\r?\n/g, '')
-
   compile: (data, path, callback) ->
     html = escape(data)
     url = @path_transform(path.replace(/\\/g, "/"))
