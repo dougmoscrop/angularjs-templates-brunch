@@ -1,6 +1,6 @@
 {
   "name": "angularjs-templates-brunch",
-  "version": "0.0.3",
+  "version": "1.0.0",
   "description": "Places templates in an AngularJS module via a Brunch.io plugin",
   "author": {
     "name": "Doug Moscrop",
